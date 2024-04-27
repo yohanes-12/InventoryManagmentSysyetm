@@ -20,3 +20,11 @@ An inventory management system (IMS) is needed to streamline the operations of a
 - Scalability and Integration: Designed to be scalable to handle increased business growth and adaptable for integration with other systems.
 
 Comprehensive documentation will be provided, including user manuals and technical documentation, to facilitate easy understanding and efficient use of the system. The successful deployment of this IMS will enhance the company's ability to manage inventory effectively, reduce operational costs, and improve customer satisfaction.
+
+
+# Class Diagram
+
+![IMS-ClassDiagram](https://github.com/yohanes-12/InventoryManagmentSysyetm/assets/56771954/9e64aa52-c584-4b74-9e19-986515f74353)
+
+
+#ER Diagram
