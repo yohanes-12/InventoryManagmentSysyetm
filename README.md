@@ -28,3 +28,4 @@ Comprehensive documentation will be provided, including user manuals and technic
 
 
 #ER Diagram
+![IME-ERD](https://github.com/yohanes-12/InventoryManagmentSysyetm/assets/56771954/3c7587f2-d3fa-4145-b02e-d522de793e4a)
