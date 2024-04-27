@@ -1,4 +1,4 @@
 package com.bertha.inventorymanagementsystemapp.dto.request;
 
-public record SupplierRequest (String supplierName, String supplierEmail, String supplierPhone){
+public record SupplierRequestForStock(Long productId, Integer quantity) {
 }

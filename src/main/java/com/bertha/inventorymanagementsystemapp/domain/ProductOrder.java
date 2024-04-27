@@ -1,6 +1,5 @@
 package com.bertha.inventorymanagementsystemapp.domain;
 
-import com.bertha.inventorymanagementsystemapp.domain.enumClass.OrderStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -15,8 +14,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "order")
-public class Order {
+@Table(name = "product_order")
+public class ProductOrder {
 
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
@@ -24,13 +23,9 @@ public class Order {
 
     private LocalDate orderDate;
 
-    @Enumerated(EnumType.STRING)
-    private OrderStatus orderStatus;
 
-    @NotNull
     private Integer orderQuantity;
 
-    @NotNull
     private BigDecimal orderPrice;
 
     @OneToMany(mappedBy = "order")
@@ -38,5 +33,15 @@ public class Order {
 
     @ManyToOne
     private Customer customer;
+
+    public void addProduct(Product product) {
+        products.add(product);
+        product.setOrder(this);
+    }
+
+    public void removeProduct(Product product) {
+        products.remove(product);
+        product.setOrder(null);
+    }
 
 }

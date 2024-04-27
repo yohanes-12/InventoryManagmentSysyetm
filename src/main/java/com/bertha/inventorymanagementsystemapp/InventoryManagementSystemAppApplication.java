@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class InventoryManagementSystemAppApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(InventoryManagementSystemAppApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(InventoryManagementSystemAppApplication.class, args);
+    }
 
 }

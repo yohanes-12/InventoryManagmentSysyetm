@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.awt.image.BufferedImage;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Data
@@ -16,29 +17,29 @@ import java.util.List;
 public class Product {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private Long itemId;
-
-
-    @Column( nullable = false, length = 50)
-    private String itemCategory;
+    private Long productId;
 
     @Column( nullable = false, length = 50)
-    private String ItemName;
+    private String productCode;
+
+    @Column( nullable = false, length = 50)
+    private String productName;
+
+    @Column( nullable = false, length = 50)
+    private String productCategory;
 
     @Column( nullable = false)
-    private double itemPrice;
+    private BigDecimal Price;
 
-
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Supplier supplier;
 
-    @OneToMany(mappedBy = "item")
-    private List<Stock> stock;
+    @OneToOne
+    private Stock stock;
 
-    @ManyToMany(mappedBy = "item")
-    private List<Order> orders;
-
-
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private ProductOrder order;
 
 
 }
